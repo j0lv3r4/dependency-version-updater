@@ -23,7 +23,8 @@ depArr.forEach(dep => {
   depObj = Object.assign({}, depObj, dep);
 });
 
-const pkgsList = findPkgs(path);
-pkgsList.forEach(filePath => {
-  updatePkg(filePath, depObj);
+findPkgs(path, pkgsList => {
+  pkgsList.forEach(filePath => {
+    updatePkg(filePath, depObj);
+  });
 });

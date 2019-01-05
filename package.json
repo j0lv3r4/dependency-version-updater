@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "commander": "^2.19.0",
-    "folder-contents": "^1.1.0"
+    "glob": "^7.1.3"
   },
   "devDependencies": {
     "prettier": "^1.15.3"

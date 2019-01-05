@@ -1,21 +1,17 @@
-const folderContents = require("folder-contents");
+const glob = require("glob");
 
-const findPkgs = dir => {
+const findPkgs = (dir, cb) => {
   const options = {
-    path: dir,
-    recursively: true,
-    extensionAccept: ["json"],
-    folderIgnore: ["node_modules"]
+    cwd: dir,
+    absolute: true
   };
 
-  const js = folderContents(options);
+  console.log("options:", options);
 
-  const pkgList = Object.entries(js)
-    .map(([key, value]) => {
-      const file = `${value.path}/${value.name}.${value.ext}`;
-      return file;
-    })
-    .filter(file => {
+  glob("**/*.json", options, (err, files) => {
+    if (err) return new Error(err);
+
+    const pkgList = files.filter(file => {
       const arr = file.split("/");
 
       if (arr.includes("node_modules")) {
@@ -27,7 +23,8 @@ const findPkgs = dir => {
       }
     });
 
-  return pkgList;
+    cb(pkgList);
+  });
 };
 
 module.exports = findPkgs;
