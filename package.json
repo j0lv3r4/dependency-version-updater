@@ -1,0 +1,22 @@
+{
+  "name": "dependency-updater",
+  "version": "0.1.0",
+  "description": "Updates dependencies recursively in package.json files",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "commander": "^2.19.0",
+    "folder-contents": "^1.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.15.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Juan Olvera",
+  "license": "MIT"
+}
