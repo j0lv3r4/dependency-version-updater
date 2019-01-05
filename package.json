@@ -1,5 +1,5 @@
 {
-  "name": "dependency-updater",
+  "name": "dependency-version-updater",
   "version": "0.1.0",
   "description": "Updates dependencies recursively in package.json files",
   "main": "index.js",
