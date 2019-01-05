@@ -6,8 +6,6 @@ const findPkgs = (dir, cb) => {
     absolute: true
   };
 
-  console.log("options:", options);
-
   glob("**/*.json", options, (err, files) => {
     if (err) return new Error(err);
 
